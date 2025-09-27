@@ -1,0 +1,27 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>P2's Spice Company</title>
+    <link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky" rel="stylesheet">
+    <!--link rel="stylesheet" href="{% static 'css/styles.css' %}"-->
+    <style>
+      body {
+        font-family: 'Fontdiner Swanky', cursive;
+      }
+      div {
+        text-align: center;
+      }
+    </style>
+  </head>
+<body class="background-image" style="background-image: url('{% static 'images/hero.jpg' %}'); background-size: cover; background-repeat: no-repeat;">
+  <section>  
+    <h1>P2's Spice Company</h1>
+    <h2>Handcrafted Artisan Spice Blends</h3>
+    <p>Free of sugar, salt, MSG, preservatives, gluten, and anti-caking agents.</p>    
+</section>
+<footer>Made with Django</footer>
+</body>
+
+</html>
