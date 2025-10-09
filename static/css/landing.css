@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Fontdiner+Swanky&display=swap');
+
+body {
+    font-family: 'Fontdiner Swanky', cursive;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    color: white;
+}
+
+.background-image {
+    background-image: url('../images/hero.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 60px;
+    position: relative;
+}
+
+.content {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 80px;
+}
+
+h1, h2, p {
+    margin: 10px 0;
+}
+
+.products {
+    display: flex; /* Enable Flexbox for the container */
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+    flex-wrap: wrap; /* Add wrapping for responsiveness */
+}
+
+.product {
+    background: rgba(255, 255, 255, 0.2);
+    background-color: #333; /* Use a solid background color */
+    padding: 20px;
+    border-radius: 10px;
+    text-align: left;
+    max-width: 300px;
+    flex: 1 1 300px; /* Allow items to grow, shrink, and have a base width */
+}
+
+.product h3 {
+    margin-top: 0;
+    color: white;
+}
+
+.product p {
+    color: #ddd;
+}
+
+.add-to-cart-form {
+    margin-top: 15px;
+}
+
+.add-to-cart-form button {
+    background: #d9534f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-family: 'Fontdiner Swanky', cursive;
+    cursor: pointer;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.add-to-cart-form button:hover {
+    background: #c9302c;
+}
+
+.checkout-button {
+    display: block;
+    margin-top: 20px;
+    background: #5cb85c;
+    color: white;
+    padding: 15px 30px;
+    text-decoration: none;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    font-family: 'Fontdiner Swanky', cursive;
+}
+
+.checkout-button:hover {
+    background: #449d44;
+}
+
+footer {
+    position: absolute;
+    bottom: 20px;
+    color: white;
+    text-align: center;
+    width: 100%;
+}
+
+.product-flex-container {
+  display: flex; /* Enables Flexbox layout */
+  flex-wrap: wrap; /* Allows items to wrap to the next line on smaller screens */
+  gap: 2rem; /* Creates a gap between the products */
+  justify-content: center; /* Centers the products horizontally */
+}
+
+.product-spotlight {
+  flex: 1 1 45%; /* Allows items to grow, shrink, and have a minimum width */
+  max-width: 500px; /* Optional: Sets a maximum width for products */
+  /* Additional styling for the product sections if needed */
+}
+
+.product-item {
+  flex: 1 1 45%;
+  max-width: 500px;
+  text-align: center;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent black background */
+  padding: 20px; /* Padding inside the box */
+  border-radius: 10px; /* Rounded corners */
+}
+
+/* Optional: To prevent the product images from distorting */
+.product-item img {
+  max-width: 100%;
+  height: auto;
+  margin-top: 1rem;
+}

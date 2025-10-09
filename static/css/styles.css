@@ -1,274 +1,411 @@
-/* General styles */
-html, body {
-    margin: 0;
-    font-family: sans-serif;
-    color: #333;
+/*-------------
+ 	General
+-------------*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-/* New: Perspective context for parallax */
-.parallax-group {
-    position: relative;
-    height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
-    perspective: 1px;
+html {
+  font: normal 16px sans-serif;
+  color: #4a9909;
 }
 
-/* Specific background for the first parallax group (hero) */
-.parallax-group.parallax-1 {
-    background-color: black;
-}
-
-/* New: Main image element for parallax */
-.parallax-img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: contain;
-    object-position: center;
-    transform: translateZ(-1px) scale(2);
-    z-index: -2;
-}
-
-/* New: Layer for the smoke overlay */
-.parallax-layer.middle-layer {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url("../images/vecteezy_smoke-fog-white-clouds-on-black-background_16263049.jpg");
-    background-size: cover;
-    transform: translateZ(-0.5px) scale(1.5);
-    opacity: 0.8;
-    z-index: -1;
-}
-
-/* Foreground layer for text and content */
-.parallax-layer.foreground-layer {
-    position: relative;
-    height: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1;
-    transform: translateZ(0);
-}
-
-/* Specific parallax overlays for other sections */
-.parallax-2 .foreground-layer {
-    background-color: rgba(0, 0, 0, 0.5); 
-}
-
-.parallax-3 .foreground-layer {
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-/* Content section styling */
-.content-section {
-    position: relative;
-    background: #fff;
-    padding: 50px 0;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    z-index: 2;
-}
-.container {
-    max-width: 960px;
-    margin: auto;
-    padding: 0 20px;
-}
-
-/* Card grid layout */
-.card-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
-    gap: 30px;
-}
-
-/* Updated: Project card styling with 3D effects and Flexbox */
-.project-card {
-    background: #f8f9fa;
-    border: 1px solid #dee2e6;
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
-    transform: perspective(1000px) rotateX(0deg);
-    display: flex;
-    flex-direction: column;
-}
-
-/* Add hover effect for better user experience */
-.project-card:hover {
-    transform: perspective(1000px) translateY(-8px) scale(1.02) rotateX(2deg);
-    box-shadow: 0 15px 30px rgba(0,0,0,0.15), inset 0 0 10px rgba(0, 123, 255, 0.5);
-}
-
-/* New: Highlight the title of featured projects */
-.project-card.is-featured .card-header-text h3 {
-    color: #007bff; /* Use your primary brand color */
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
-}
-
-/* Optional: Add a subtle glow or border to the whole featured card */
-.project-card.is-featured {
-    border-color: #007bff;
-    box-shadow: 0 0 15px rgba(0, 123, 255, 0.4);
-}
-
-/* New: Card header text styling */
-.card-header-text {
-    margin-bottom: 15px;
-}
-
-.card-header-text h3 {
-    margin-bottom: 5px;
-}
-
-.card-domain-link {
-    font-size: 0.9em;
-    color: #007bff;
-    text-decoration: none;
-    display: block;
-}
-
-/* Card image frame fix */
-.card-image-frame {
-    position: relative;
-    width: 100%;
-    height: 180px;
-    overflow: hidden;
-    border-radius: 4px;
-    margin-bottom: 15px;
-    box-shadow: inset 0 0 0 1px rgba(0,0,0,0.1);
-}
-
-.card-image-frame img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.project-card p {
-    font-size: 0.9em;
-    color: #6c757d;
-}
-
-/* New: Container for icons and technologies text */
-.tech-stack-container {
-    margin-top: auto;
-}
-
-/* Technology icons */
-.tech-icons {
-    margin-top: 10px;
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-}
-
-.tech-icons i {
-    font-size: 1.5em;
-    color: #495057;
-    transition: color 0.2s ease-in-out, transform 0.2s ease-in-out;
-}
-
-.tech-icons i:hover {
-    color: #007bff;
-    transform: translateY(-2px) scale(1.1);
-}
-
-/* Technologies text styling */
-.technologies-text {
-    font-size: 0.4em;
-    color: #888;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-top: 10px;
-}
-
-/* Domain header style */
-.domain-header {
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 30px;
-    font-size: 2em;
-    color: #007bff;
-    border-bottom: 2px solid #dee2e6;
-    padding-bottom: 10px;
-}
-
-/* Footer Styles */
-.site-footer {
-    background-color: #343a40;
-    color: #f8f9fa;
-    text-align: center;
-    padding: 20px 0;
-    position: relative;
-    z-index: 2;
-}
-
-.site-footer a {
-    color: #007bff;
-    text-decoration: none;
-}
-
-.site-footer a:hover {
-    text-decoration: underline;
-}
-
-
-/* --- BEGIN tickets app accordion CSS --- */
-
-.accordion-container {
-  max-width: 600px;
-  margin: 20px auto;
-  border: thin solid #ddd;
-  border-radius: 5px;
-}
-
-details {
-  border-bottom: thin solid #ddd;
-}
-
-details:last-child {
-  border-bottom: none;
-}
-
-summary {
+ul, nav {
   list-style: none;
-  padding: 15px 20px;
-  cursor: pointer;
-  font-weight: 500;
-  position: relative;
 }
 
-summary:hover {
+a {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  opacity: 0.9;
+}
+
+a:hover {
+  opacity: 1;
+}
+
+a.btn {
+  color: #fff;
+  border-radius: 4px;
+  text-transform: uppercase;
+  background-color: #2196F3;
+  font-weight: 800;
+  text-align: center;
+}
+
+hr {
+  width: 150px;
+  height: 2px;
+  background-color: #2196F3;
+  border: 0;
+  margin-bottom: 80px;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 125px 100px;
+}
+
+@media (max-width: 1000px) {
+  section {
+    padding: 100px 50px;
+  }
+}
+
+@media (max-width: 600px) {
+  section {
+    padding: 80px 30px;
+  }
+}
+
+section h3.title {
+  color: #414a4f;
+  text-transform: capitalize;
+  font: bold 32px 'Open Sans', sans-serif;
+  margin-bottom: 35px;
+  text-align: center;
+}
+
+section p {
+  max-width: 800px;
+  text-align: center;
+  margin-bottom: 35px;
+  padding: 0 20px;
+  line-height: 2;
+}
+
+/* REFACTORED: Renamed .grid for product-specific usage and made it more flexible. */
+.product-grid {
+  width: 100%;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px; /* Provides consistent spacing between products */
+  justify-content: center;
+}
+
+
+/*-------------
+ 	Header
+-------------*/
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #fff;
+  padding: 35px 100px 0;
+}
+
+header h2 {
+  font-family: 'Quicksand', sans-serif;
+}
+
+header nav {
+  display: flex;
+}
+
+header nav li {
+  margin: 0 15px;
+}
+
+header nav li:first-child {
+  margin-left: 0;
+}
+
+header nav li:last-child {
+  margin-right: 0;
+}
+
+@media (max-width: 1000px) {
+  header {
+    padding: 20px 50px;
+  }
+}
+
+@media (max-width: 700px) {
+  header {
+    flex-direction: column;
+  }
+  header h2 {
+    margin-bottom: 15px;
+  }
+}
+
+
+/*----------------
+ 	Hero Section
+----------------*/
+
+.hero {
+  position: relative;
+  justify-content: center;
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+}
+
+.hero .background-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-color: #2196F3;
+  z-index: -1;
+}
+
+.hero .background-image:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #414a4f;
+  opacity: 0.75;
+}
+
+.hero h1 {
+  font: bold 60px 'Open Sans', sans-serif;
+  margin-bottom: 15px;
+}
+
+.hero h3 {
+  font: normal 28px 'Open Sans', sans-serif;
+  margin-bottom: 40px;
+}
+
+.hero a.btn {
+  padding: 20px 46px;
+}
+
+@media (max-width: 800px) {
+  .hero {
+    min-height: 600px;
+  }
+  .hero h1 {
+    font-size: 48px;
+  }
+  .hero h3 {
+    font-size: 24px;
+  }
+  .hero a.btn {
+    padding: 15px 40px;
+  }
+}
+
+
+/*--------------------
+ 	Product Section (Refactored from .our-work)
+---------------------*/
+
+/* REFACTORED: Renamed section for clarity */
+.products-section {
+  background-color: #fff;
+}
+
+/* REFACTORED: Created a universal product card. */
+.product-card {
+  padding: 20px;
+  height: 350px;
+  border-radius: 3px;
+  background-clip: content-box;
+  background-size: cover;
+  background-position: center;
+  background-color: #333;
+}
+
+/* REFACTORED: Removed old media queries and size classes. */
+/* The new .product-grid handles responsiveness automatically. */
+
+
+/*----------------------
+ 	Features Section
+----------------------*/
+
+.features {
   background-color: #f7f7f7;
 }
 
-summary::after {
-  content: '▶';
-  position: absolute;
-  right: 20px;
-  transition: transform 0.2s ease;
+.features .grid li {
+  padding: 0 30px;
+  flex-basis: 33%;
+  text-align: center;
 }
 
-details[open] > summary::after {
-  transform: rotate(90deg);
+.features .grid li i {
+  font-size: 50px;
+  color: #2196F3;
+  margin-bottom: 25px;
 }
 
-.content {
-  padding: 10px 20px 20px;
-  border-top: thin solid #eee;
+.features .grid li h4 {
+  color: #555;
+  font-size: 20px;
+  margin-bottom: 25px;
 }
 
-/* --- END tickets app accordion CSS --- */
+.features .grid li p {
+  margin: 0;
+}
+
+@media (max-width: 1000px) {
+  .features .grid li {
+    flex-basis: 70%;
+    margin-bottom: 65px;
+  }
+  .features .grid li:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .features .grid li {
+    flex-basis: 100%;
+  }
+}
+
+
+/*--------------------
+ 	Reviews Section
+--------------------*/
+
+.reviews {
+  background-color: #fff;
+}
+
+.reviews .quote {
+  text-align: center;
+  width: 80%;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.5;
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.reviews .author {
+  font-size: 18px;
+  margin-bottom: 50px;
+}
+
+.reviews .author:last-child {
+  margin-bottom: 0;
+}
+
+@media (max-width: 1000px) {
+  .reviews .quote {
+    font-size: 20px;
+  }
+  .reviews .author {
+    font-size: 16px;
+  }
+}
+
+
+/*---------------------
+ 	Contact Section
+---------------------*/
+
+.contact {
+  background-color: #f7f7f7;
+}
+
+.contact form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 800px;
+  width: 80%;
+}
+
+.contact form input {
+  padding: 15px;
+  flex: 1;
+  margin-right: 30px;
+  font-size: 18px;
+  color: #555;
+}
+
+.contact form .btn {
+  padding: 18px 42px;
+}
+
+@media (max-width: 800px) {
+  .contact form input {
+    flex-basis: 100%;
+    margin: 0 0 20px 0;
+  }
+}
+
+
+/*-------------
+ 	Footer
+-------------*/
+
+footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  background-color: #414a4f;
+  padding: 60px 0;
+}
+
+footer ul {
+  display: flex;
+  margin-bottom: 25px;
+  font-size: 32px;
+}
+
+footer ul li {
+  margin: 0 8px;
+}
+
+footer ul li:first-child {
+  margin-left: 0;
+}
+
+footer ul li:last-child {
+  margin-right: 0;
+}
+
+footer p {
+  text-transform: uppercase;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  margin-bottom: 10px;
+}
+
+footer p a {
+  color: #fff;
+}
+
+@media (max-width: 700px) {
+  footer {
+    padding: 80px 15px;
+  }
+}
+
+
+/* -- Demo ads -- */
+
+@media (max-width: 1200px) {
+  #bsaHolder {
+    display: none;
+  }
+}
