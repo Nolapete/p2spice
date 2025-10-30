@@ -8,6 +8,6 @@ class LandingConfig(AppConfig):
     def ready(self):
         from django.contrib import admin
 
-        admin.site.site_header = "p2spice.com Administration"
-        admin.site.site_title = "p2spice.com"
+        admin.site.site_header = "config.com Administration"
+        admin.site.site_title = "config.com"
         admin.site.index_title = "P2's Spice Company Admin Portal"
