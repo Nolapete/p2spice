@@ -13,7 +13,8 @@ html {
   color: #4a9909;
 }
 
-ul, nav {
+ul,
+nav {
   list-style: none;
 }
 
@@ -32,7 +33,7 @@ a.btn {
   color: #fff;
   border-radius: 4px;
   text-transform: uppercase;
-  background-color: #2196F3;
+  background-color: #2196f3;
   font-weight: 800;
   text-align: center;
 }
@@ -40,7 +41,7 @@ a.btn {
 hr {
   width: 150px;
   height: 2px;
-  background-color: #2196F3;
+  background-color: #2196f3;
   border: 0;
   margin-bottom: 80px;
 }
@@ -67,7 +68,9 @@ section {
 section h3.title {
   color: #414a4f;
   text-transform: capitalize;
-  font: bold 32px 'Open Sans', sans-serif;
+  font:
+    bold 32px "Open Sans",
+    sans-serif;
   margin-bottom: 35px;
   text-align: center;
 }
@@ -89,7 +92,6 @@ section p {
   justify-content: center;
 }
 
-
 /*-------------
  	Header
 -------------*/
@@ -108,7 +110,7 @@ header {
 }
 
 header h2 {
-  font-family: 'Quicksand', sans-serif;
+  font-family: "Quicksand", sans-serif;
 }
 
 header nav {
@@ -142,7 +144,6 @@ header nav li:last-child {
   }
 }
 
-
 /*----------------
  	Hero Section
 ----------------*/
@@ -162,12 +163,12 @@ header nav li:last-child {
   width: 100%;
   height: 100%;
   background-size: cover;
-  background-color: #2196F3;
+  background-color: #2196f3;
   z-index: -1;
 }
 
 .hero .background-image:after {
-  content: '';
+  content: "";
   position: absolute;
   top: 0;
   left: 0;
@@ -178,12 +179,16 @@ header nav li:last-child {
 }
 
 .hero h1 {
-  font: bold 60px 'Open Sans', sans-serif;
+  font:
+    bold 60px "Open Sans",
+    sans-serif;
   margin-bottom: 15px;
 }
 
 .hero h3 {
-  font: normal 28px 'Open Sans', sans-serif;
+  font:
+    normal 28px "Open Sans",
+    sans-serif;
   margin-bottom: 40px;
 }
 
@@ -205,7 +210,6 @@ header nav li:last-child {
     padding: 15px 40px;
   }
 }
-
 
 /*--------------------
  	Product Section (Refactored from .our-work)
@@ -230,7 +234,6 @@ header nav li:last-child {
 /* REFACTORED: Removed old media queries and size classes. */
 /* The new .product-grid handles responsiveness automatically. */
 
-
 /*----------------------
  	Features Section
 ----------------------*/
@@ -247,7 +250,7 @@ header nav li:last-child {
 
 .features .grid li i {
   font-size: 50px;
-  color: #2196F3;
+  color: #2196f3;
   margin-bottom: 25px;
 }
 
@@ -276,7 +279,6 @@ header nav li:last-child {
     flex-basis: 100%;
   }
 }
-
 
 /*--------------------
  	Reviews Section
@@ -314,7 +316,6 @@ header nav li:last-child {
   }
 }
 
-
 /*---------------------
  	Contact Section
 ---------------------*/
@@ -350,7 +351,6 @@ header nav li:last-child {
     margin: 0 0 20px 0;
   }
 }
-
 
 /*-------------
  	Footer
@@ -400,7 +400,6 @@ footer p a {
     padding: 80px 15px;
   }
 }
-
 
 /* -- Demo ads -- */
 

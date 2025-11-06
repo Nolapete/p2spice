@@ -1,35 +1,33 @@
-{% extends 'landing/base.html' %}
-
-{% block content %}
+{% extends 'landing/base.html' %} {% block content %}
 <div class="background-image">
   <section class="content hero">
     <h1>P2's Spice Company</h1>
     <h2>Handcrafted Artisan Spice Blends</h2>
-    <p>Free of sugar, salt, MSG, preservatives, gluten, and anti-caking agents.</p>
+    <p>
+      Free of sugar, salt, MSG, preservatives, gluten, and anti-caking agents.
+    </p>
   </section>
 
-  {% if show_cart_view %}
-    {% include "landing/cart/detail.html" %}
-  {% else %}
-    <div class="product-flex-container">
-      {% for product in products %}
-          <div class="product-item solid-bg">
-              <h3>{{ product.name }}</h3>
-              <p>{{ product.description }}</p>
-              <p><strong>${{ product.price }}</strong></p>
-              {% if product.image %}
-                  <img src="{{ product.image.url }}" alt="{{ product.name }}">
-              {% endif %}
+  {% if show_cart_view %} {% include "landing/cart/detail.html" %} {% else %}
+  <div class="product-flex-container">
+    {% for product in products %}
+    <div class="product-item solid-bg">
+      <h3>{{ product.name }}</h3>
+      <p>{{ product.description }}</p>
+      <p><strong>${{ product.price }}</strong></p>
+      {% if product.image %}
+      <img src="{{ product.image.url }}" alt="{{ product.name }}" />
+      {% endif %}
 
-              <form action="{% url 'landing:cart_add' product.id %}" method="post">
-                  {% csrf_token %}
-                  <button type="submit">Add to Cart</button>
-              </form>
-          </div>
-      {% empty %}
-          <p>No products are currently available.</p>
-      {% endfor %}
+      <form action="{% url 'landing:cart_add' product.id %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Add to Cart</button>
+      </form>
     </div>
+    {% empty %}
+    <p>No products are currently available.</p>
+    {% endfor %}
+  </div>
   {% endif %}
 </div>
 {% endblock %}

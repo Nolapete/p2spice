@@ -1,13 +1,11 @@
-from decimal import Decimal
-from django.conf import settings
-from django.shortcuts import render, get_object_or_404, redirect
-from django.urls import reverse
-from django.db.models import Q
-from django.views.decorators.http import require_POST
 import stripe
+from django.conf import settings
+from django.db.models import Q
+from django.shortcuts import get_object_or_404, redirect, render
+from django.urls import reverse
 
-from .models import Product
 from .cart import Cart
+from .models import Product
 
 stripe.api_key = settings.STRIPE_SECRET_KEY
 

@@ -1,49 +1,54 @@
-{% extends 'landing/base.html' %}
-{% load static %}
-
-{% block title %}Your Shopping Cart - P2's Spice Company{% endblock %}
-
-{% block content %}
+{% extends 'landing/base.html' %} {% load static %} {% block title %}Your
+Shopping Cart - P2's Spice Company{% endblock %} {% block content %}
 <div class="cart-detail">
-    <section class="content">
-        <h2>Your shopping cart</h2>
-    </section>
+  <section class="content">
+    <h2>Your shopping cart</h2>
+  </section>
 
-    {% if cart %}
-        <div class="product-flex-container">
-            <!-- Individual Cart Items -->
-            {% for item in cart %}
-                <div class="product-item solid-bg">
-                    <h3>{{ item.product.name }}</h3>
-                    {% if item.product.image %}
-                        <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}">
-                    {% endif %}
-                    <p><strong>Price: ${{ item.price }}</strong></p>
-                    <p><strong>Quantity: {{ item.quantity }}</strong></p>
-                    <p><strong>Total: ${{ item.total_price }}</strong></p>
-                    <form action="{% url 'landing:cart_remove' item.product.id %}" method="post">
-                        {% csrf_token %}
-                        <button type="submit" class="remove-button">Remove</button>
-                    </form>
-                </div>
-            {% endfor %}
+  {% if cart %}
+  <div class="product-flex-container">
+    <!-- Individual Cart Items -->
+    {% for item in cart %}
+    <div class="product-item solid-bg">
+      <h3>{{ item.product.name }}</h3>
+      {% if item.product.image %}
+      <img src="{{ item.product.image.url }}" alt="{{ item.product.name }}" />
+      {% endif %}
+      <p><strong>Price: ${{ item.price }}</strong></p>
+      <p><strong>Quantity: {{ item.quantity }}</strong></p>
+      <p><strong>Total: ${{ item.total_price }}</strong></p>
+      <form
+        action="{% url 'landing:cart_remove' item.product.id %}"
+        method="post"
+      >
+        {% csrf_token %}
+        <button type="submit" class="remove-button">Remove</button>
+      </form>
+    </div>
+    {% endfor %}
 
-            <!-- Order Summary Item -->
-            <div class="product-item solid-bg cart-summary-item">
-                <h3>Order Summary</h3>
-                <div class="summary-details">
-                    <p>Total Items: <strong>{{ cart.get_total_items }}</strong></p>
-                    <p>Cart Total: <strong>${{ cart.get_total_price }}</strong></p>
-                </div>
-                <div class="cart-actions">
-                    <a href="{% url 'landing:home' %}" class="btn continue-shopping-button">Continue shopping</a>
-                    <a href="{% url 'landing:checkout' %}" class="btn checkout-button">Checkout</a>
-                </div>
-            </div>
-        </div>
-    {% else %}
-        <p class="empty-cart-message">Your cart is empty.</p>
-        <a href="{% url 'landing:home' %}" class="btn continue-shopping-button">Continue shopping</a>
-    {% endif %}
+    <!-- Order Summary Item -->
+    <div class="product-item solid-bg cart-summary-item">
+      <h3>Order Summary</h3>
+      <div class="summary-details">
+        <p>Total Items: <strong>{{ cart.get_total_items }}</strong></p>
+        <p>Cart Total: <strong>${{ cart.get_total_price }}</strong></p>
+      </div>
+      <div class="cart-actions">
+        <a href="{% url 'landing:home' %}" class="btn continue-shopping-button"
+          >Continue shopping</a
+        >
+        <a href="{% url 'landing:checkout' %}" class="btn checkout-button"
+          >Checkout</a
+        >
+      </div>
+    </div>
+  </div>
+  {% else %}
+  <p class="empty-cart-message">Your cart is empty.</p>
+  <a href="{% url 'landing:home' %}" class="btn continue-shopping-button"
+    >Continue shopping</a
+  >
+  {% endif %}
 </div>
 {% endblock %}
