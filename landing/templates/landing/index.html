@@ -16,17 +16,17 @@
         <nav>
           <div class="auth-links">
             {% if user.is_authenticated %}
-            <span>Hello, {{ user.get_username }}!</span>
-            <form
-              action="{% url 'logout' %}"
-              method="post"
-              style="display: inline"
-            >
-              {% csrf_token %}
-              <button type="submit">Log Out</button>
-            </form>
+              <span>Hello, {{ user.get_username }}!</span>
+              <form
+                action="{% url 'logout' %}"
+                method="post"
+                style="display: inline"
+              >
+                {% csrf_token %}
+                <button type="submit">Log Out</button>
+              </form>
             {% else %}
-            <a href="{% url 'login' %}?next={{ request.path }}">Log In</a>
+              <a href="{% url 'login' %}?next={{ request.path }}">Log In</a>
             {% endif %}
           </div>
         </nav>

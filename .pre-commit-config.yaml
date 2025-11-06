@@ -1,9 +1,14 @@
 repos:
 - repo: https://github.com/astral-sh/ruff-pre-commit
-  rev: v0.5.5 # Use the latest version
+  rev: v0.14.3 # Use the latest version
   hooks:
     # Runs the linter and auto-fixes any fixable errors
     - id: ruff
       args: [--fix]
     # Runs the formatter (alternative to black and isort)
     - id: ruff-format
+
+- repo: https://github.com/rtts/djhtml
+  rev: 3.0.10
+  hooks:
+    - id: djhtml
