@@ -1,32 +1,30 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>{% block title %}P2's Spice Company{% endblock %}</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="{% static 'css/landing.css' %}" />
-  </head>
-  <body>
-    <div class="header-links">
-      {% if user.is_authenticated %}
-        <span>Hello, {{ user.get_username }}!</span>
-        <a href="{% url 'logout' %}">Log Out</a>
-      {% else %}
-        <a href="{% url 'login' %}?next={{ request.path }}">Log In</a>
-      {% endif %}
-      <a href="{% url 'landing:view_cart_on_home' %}">
-        View Cart ({{ cart.get_total_items }})
-      </a>
-      |
-      <a href="{% url 'landing:home' %}"> Continue Shopping </a>
-    </div>
-
-    {% block content %} {% endblock %}
-
-    <footer>Made with Django</footer>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            {% block title %}P2's Spice Company{% endblock %}
+        </title>
+        <link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky"
+              rel="stylesheet" />
+        <link rel="stylesheet" href="{% static 'css/landing.css' %}" />
+    </head>
+    <body>
+        <div class="header-links">
+            {% if user.is_authenticated %}
+                <span>Hello, {{ user.get_username }}!</span>
+                <a href="{% url 'logout' %}">Log Out</a>
+            {% else %}
+                <a href="{% url 'login' %}?next={{ request.path }}">Log In</a>
+            {% endif %}
+            <a href="{% url 'landing:view_cart_on_home' %}">View Cart ({{ cart.get_total_items }})</a>
+            |
+            <a href="{% url 'landing:home' %}">Continue Shopping</a>
+        </div>
+        {% block content %}{% endblock %}
+        <footer>
+            Made with Django
+        </footer>
+    </body>
 </html>

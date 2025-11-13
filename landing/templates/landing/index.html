@@ -1,45 +1,41 @@
 {% load static %}
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8" />
-    <title>P2's Spice Company</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="{% static 'css/landing.css' %}" />
-  </head>
-  <body>
-    <div class="background-image">
-      <header>
-        <nav>
-          <div class="auth-links">
-            {% if user.is_authenticated %}
-              <span>Hello, {{ user.get_username }}!</span>
-              <form
-                action="{% url 'logout' %}"
-                method="post"
-                style="display: inline"
-              >
-                {% csrf_token %}
-                <button type="submit">Log Out</button>
-              </form>
-            {% else %}
-              <a href="{% url 'login' %}?next={{ request.path }}">Log In</a>
-            {% endif %}
-          </div>
-        </nav>
-      </header>
-      <section class="content">
-        <h1>P2's Spice Company</h1>
-        <h2>Handcrafted Artisan Spice Blends</h2>
-        <p>
-          Free of sugar, salt, MSG, preservatives, gluten, and anti-caking
-          agents.
-        </p>
-      </section>
-    </div>
-    <footer>Made with Django</footer>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <title>P2's Spice Company</title>
+        <link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky"
+              rel="stylesheet" />
+        <link rel="stylesheet" href="{% static 'css/landing.css' %}" />
+    </head>
+    <body>
+        <div class="background-image">
+            <header>
+                <nav>
+                    <div class="auth-links">
+                        {% if user.is_authenticated %}
+                            <span>Hello, {{ user.get_username }}!</span>
+                            <form action="{% url 'logout' %}" method="post" style="display: inline">
+                                {% csrf_token %}
+                                <button type="submit">Log Out</button>
+                            </form>
+                        {% else %}
+                            <a href="{% url 'login' %}?next={{ request.path }}">Log In</a>
+                        {% endif %}
+                    </div>
+                </nav>
+            </header>
+            <section class="content">
+                <h1>P2's Spice Company</h1>
+                <h2>Handcrafted Artisan Spice Blends</h2>
+                <p>
+                    Free of sugar, salt, MSG, preservatives, gluten, and anti-caking
+                    agents.
+                </p>
+            </section>
+        </div>
+        <footer>
+            Made with Django
+        </footer>
+    </body>
 </html>

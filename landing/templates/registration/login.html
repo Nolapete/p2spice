@@ -1,13 +1,11 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <title>Log In</title>
-    <link
-      href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky"
-      rel="stylesheet"
-    />
-    <style>
+    <head>
+        <meta charset="utf-8" />
+        <title>Log In</title>
+        <link href="https://fonts.googleapis.com/css?family=Fontdiner+Swanky"
+              rel="stylesheet" />
+        <style>
       body {
         font-family: "Fontdiner Swanky", cursive;
         text-align: center;
@@ -24,16 +22,16 @@
       input[type="submit"] {
         font-family: "Fontdiner Swanky", cursive;
       }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <h2>Log In</h2>
-      <form method="post">
-        {% csrf_token %} {{ form.as_p }}
-        <button type="submit">Log In</button>
-        <input type="hidden" name="next" value="{{ next }}" />
-      </form>
-    </div>
-  </body>
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h2>Log In</h2>
+            <form method="post">
+                {% csrf_token %} {{ form.as_p }}
+                <button type="submit">Log In</button>
+                <input type="hidden" name="next" value="{{ next }}" />
+            </form>
+        </div>
+    </body>
 </html>
