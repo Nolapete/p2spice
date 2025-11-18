@@ -97,3 +97,4 @@ uwsgi.ini
 .aider*
 *.sublime-project
 *.sublime-workspace
+.direnv/

@@ -33,6 +33,7 @@ dependencies = [
     "tzdata==2025.2",
     "urllib3==2.5.0",
     "uwsgi==2.0.31",
+    "django-debug-toolbar>=6.1.0",
 ]
 
 [tool.ruff]

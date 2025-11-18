@@ -4,16 +4,19 @@ from django.contrib import admin
 from django.urls import include, path, re_path
 from django.views.generic import RedirectView
 
-favicon_view = RedirectView.as_view(
-    url=settings.STATIC_URL + "images/favicon.png", permanent=True
-)
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("accounts/", include("django.contrib.auth.urls")),
     path("", include("landing.urls")),
-    re_path(r"^favicon\.ico$", favicon_view),
+    re_path(r'^favicon\.ico$', RedirectView.as_view(url='/static/images/favicon.ico', permanent=True)),
 ]
 
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    import debug_toolbar
+    # Append the debug toolbar URLs to the existing list
+    urlpatterns += [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ]
