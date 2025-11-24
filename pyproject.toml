@@ -58,7 +58,7 @@ line-length = 88
 select = ["E", "W", "F", "I", "UP", "B", "C4", "DJ", "S"]
 
 # Ignore rules related to missing documentation strings (D-codes from pydocstyle)
-ignore = ["D100", "D101", "D102", "D103", "D104", "S101"]
+ignore = ["D100", "D101", "D102", "D103", "D104", "F403", "S101"]
 
 [tool.ruff.format]
 # Consistent formatting style: double quotes and spaces
