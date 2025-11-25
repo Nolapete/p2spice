@@ -117,6 +117,7 @@ INSTALLED_APPS = [
     "django_tables2",
     # Apps
     "landing",
+    "store.apps.StoreConfig",
 ]
 
 MIDDLEWARE = [
@@ -232,11 +233,8 @@ AUTHENTICATION_BACKENDS = [
 # https://docs.djangoproject.com/en/5.2/topics/i18n/
 
 LANGUAGE_CODE = "en-us"
-
 TIME_ZONE = "UTC"
-
 USE_I18N = True
-
 USE_TZ = True
 
 
@@ -244,10 +242,9 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = "/static/"
+MEDIA_URL = "/media/"
 STATIC_ROOT = BASE_DIR / "staticfiles_collected"
 STATICFILES_DIRS = [BASE_DIR / "static"]
-
-MEDIA_URL = "/media/"
 MEDIA_ROOT = BASE_DIR / "media"
 
 # Default primary key field type
